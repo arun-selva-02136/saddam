@@ -1,0 +1,46 @@
+.navbar{
+    /* width:1236px; */
+    height:60px;
+    position:sticky;
+    background-color:white;
+  }
+  .ms-auto{
+    padding:10px;
+  }
+  .list_item{
+    padding: 20px;
+  }
+  .list_item:hover{
+    color:blue;
+    /* margin:20px; */
+  }
+  Button{
+    background-color: #39DB4A; 
+    border: none;
+    border-radius: 20%;
+  }
+  Button.navbar-toggler-collapsed{
+    background-color: aquamarine;
+  }
+  Button.navbar-toggler{
+    color:green;
+  }
+  @media (max-width:768px){
+     .btn{
+      align-items: center;
+      width:70px;
+      margin: auto;
+      
+    }
+    .navbar{
+      height:60px;
+    }
+    /* .list_item{
+      background-color:aqua;
+    } */
+    .ms-auto{
+      /* background-color: aqua; */
+      text-align: center;
+      background-color:white;
+    }
+  }

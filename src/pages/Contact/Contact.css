@@ -1,0 +1,12 @@
+.contact-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 2px 4px 40px #39db4a;
+    padding: 30px;
+    /* margin: 50px auto; */
+}
+
+.contact-text {
+    font-size: 14px;
+    color: #666;
+}

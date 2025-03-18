@@ -1,0 +1,29 @@
+.businees-container {
+    box-shadow: 0px 5px 45px yellow;
+    border-radius: 10px;
+    border: none;
+}
+
+.badge-box {
+    background: #39db4a;
+    color: white;
+    /* padding: 10px; */
+    border-radius: 10px;
+    /* font-size: 14px; */
+    /* width: 150px; */
+    /* text-align: center; */
+    font-weight: 700;
+    position: relative;
+    box-shadow: 1px 1px 30px #FDF100;
+
+}
+.badge-box h6{
+    color: #fdf100;
+    font-weight: bold;
+}
+/* .badge-box p {
+    font-size: 16px;
+    font-weight: 999;
+    margin: 5px 0 0;
+    font-weight: normal;
+} */
