@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 .h-content{
     margin-top: 200px;
@@ -49,6 +49,22 @@
 .h3-left{
     margin-top: 100px;
 }
+.favourit{
+    position: absolute;
+    border: none;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    margin-left: 225px;
+    /* margin-top: -px; */
+    background-color:#39DB4A;
+    width: 30px;
+    height: 30px;
+    top:0;
+    right:0;
+}
+.cards-1{
+    margin-bottom: 100px;
+}
 
 @media (max-width:765px){
     .h-content{
@@ -60,5 +76,11 @@
     .cards{
         margin-left:200px
     }
-   
+   .layer{
+    margin:20px
+   }
+   .cards-1{
+    padding:20px;
+    margin:20px;
+   }
 }

@@ -5,6 +5,12 @@ import img8 from '../../assets/facebook.png';
 import img9 from '../../assets/instagram.png';
 import img10 from '../../assets/twiter.png';
 import img11 from '../../assets/youtube.png';
+
+import { FiFacebook } from "react-icons/fi";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiYoutube } from "react-icons/fi";
+
 import './Footer.css'
 
 const Footer = () => {
@@ -29,7 +35,7 @@ const Footer = () => {
           <Col xs={12} md={3} className="mb-4 mb-md-0">
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
-              <li><a href="mailto:info@company.com" >example@email.com</a></li>
+              <li><a href="mailto:info@company.com">example@email.com</a></li>
               <li><a href="tel:+64 958 248 966" >+64 958 248 966</a></li>
               <li><a href="./">Social media</a></li>
             </ul>
@@ -37,30 +43,30 @@ const Footer = () => {
           <Col xs={12} md={3}>
             <h5>Follow Us</h5>
             <ul className="list-unstyled">
-              <li><a href="https://facebook.com" >About US</a></li>
-              <li><a href="https://twitter.com" >Gallery</a></li>
-              <li><a href="https://instagram.com" >FAQ</a></li>
+              <li><a href="#" >About US</a></li>
+              <li><a href="#" >Gallery</a></li>
+              <li><a href="#" >FAQ</a></li>
             </ul>
           </Col>
         </Row>
        
       </Container>
     </footer>
-      <div className="footer-last">
+      {/* <div className="footer-last"> */}
         <Row>
             <Col md={6}>
-        <div className="medias">
+          <div className="medias">
             <div className="media-img">
-            <img src={img8} style={{width:'15px'}}/>
+            <FiFacebook />
             </div>
             <div className="media-img">
-            <img src={img9}style={{width:'20px'}} />
+            <FaInstagram />
             </div>
             <div className="media-img">
-            <img src={img10} style={{width:'20px'}}/>
+            <FaXTwitter />
             </div>
             <div className="media-img">
-            <img src={img11} style={{width:'20px'}}/>
+            <FiYoutube />
             </div>
           </div>
           </Col>
@@ -70,7 +76,7 @@ const Footer = () => {
         </div>
         </Col>
         </Row>
-      </div>
+      {/* </div> */}
         
 
     

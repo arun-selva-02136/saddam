@@ -13,7 +13,7 @@ function Navigation() {
     <Navbar collapseOnSelect expand="md" className="navbar" fixed='top'>
       <Container classname="navbar1">
         <Navbar.Brand as={Link} to="/">
-            <img src={img1} style={{width:'30px'}}/>
+            <img src={img1} style={{width:'35px'}}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -27,7 +27,7 @@ function Navigation() {
             </Nav.Link>
           </Nav>
           <Nav className='ms-auto'>
-          <Button style={{background:'green',borderRadius:"20px",color:'white'}} className='btn'>Login</Button>
+          <Button style={{background:'#39DB4A',borderRadius:"20px",color:'white',border:'none'}} className='btn'>Login</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
