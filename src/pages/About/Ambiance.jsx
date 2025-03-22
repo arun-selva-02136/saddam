@@ -9,7 +9,7 @@ import partyImg from '../../assets/party-img.jpg'
 const Ambiance = () => {
   return (
     <>
-      <Container className="mb-5" style={{marginTop:"10%"}}>
+      <Container className="mb-5" style={{marginTop:"5%"}}>
         <Card className="p-4 ambiance-container">
 
           <Row style={{ padding: 'inherit' }}>

@@ -11,6 +11,7 @@ import Ambiance from './pages/About/Ambiance';
 import Awards from './pages/About/Awards';
 import Selection from './components/navSecection/Selection'
 import Footer from './components/Footer/Footer';
+import Gallery from './pages/Gallery/Gallery';
 
 // import './App.css'
 
@@ -36,6 +37,7 @@ const App = () => {
             </>
           } />
         {/* <Route path="/menu" element={<Footer />} /> */}
+        <Route path ='/gallery' element={<Gallery/>}/>
         </Routes>
       <Footer />
     </Router>

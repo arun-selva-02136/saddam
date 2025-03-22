@@ -8,7 +8,7 @@ import nasikandar from "../../assets/nasi_kandar-foodCort.jpg";
 const Journey = () => {
   return (
     <>
-    <Container className=" mb-5" style={{marginTop:"10%"}}>
+    <Container className=" mb-5" style={{marginTop:"8%"}}>
       <Card className="p-4 about-container">
         
         {/* About Us */}

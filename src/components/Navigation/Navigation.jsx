@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
+import { CiLogin } from "react-icons/ci";
 import Button from 'react-bootstrap/Button';
 import img1 from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
@@ -10,24 +11,25 @@ import './Navigation.css'
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="md" className="navbar" fixed='top'>
+    <Navbar collapseOnSelect expand="md" className="navbar"  >
       <Container classname="navbar1">
         <Navbar.Brand as={Link} to="/">
             <img src={img1} style={{width:'35px'}}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link  as={Link} to="/">Home</Nav.Link>
+        <Navbar.Collapse id=" responsive-navbar-nav">
+          <Nav className="navigate ms-auto">
+            <Nav.Link  as={Link} to="/" >Home</Nav.Link>
             <Nav.Link as={Link} href="/menu">Menu</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} href="/gallery">Gallery</Nav.Link>
+            <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
             <Nav.Link eventKey={2} as={Link} to="/contact">
               Contact
             </Nav.Link>
+            
           </Nav>
-          <Nav className='ms-auto'>
-          <Button style={{background:'#39DB4A',borderRadius:"20px",color:'white',border:'none'}} className='btn'>Login</Button>
+          <Nav className='navigate ms-auto'>
+          <Button style={{background:'#39DB4A',borderRadius:"20px",color:'white',border:'none'}} className='btn'>Login <CiLogin /></Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Business = () => {
     return (
-        <Container className="mb-5" style={{marginTop:"10%"}}>
+        <Container className="mb-5" style={{marginTop:"5%"}}>
             <Card className="p-4 businees-container">
 
                 <Row style={{ padding: 'inherit' }}>

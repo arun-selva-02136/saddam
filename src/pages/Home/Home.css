@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 .head-left h1 {
     font-size: 50px;
     font-weight: 700;
@@ -15,7 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 90px;
+    font-family:inter;
 }
 .h-content{
     margin-top: 200px;
@@ -31,7 +33,7 @@
 }
 .h-content h5{
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 200;
 }
 .h3-left p{
     font-size: 22px;
@@ -44,11 +46,11 @@
 }
 .h3-left h5{
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 200;
 }
-.h3-left{
-    margin-top: 100px;
-}
+/* .h3-left{
+    margin-top: 100px; */
+/* } */
 .favourit{
     position: absolute;
     border: none;
@@ -62,9 +64,13 @@
     top:0;
     right:0;
 }
-.cards-1{
-    margin-bottom: 100px;
+.home2{
+    margin-top:30px;
+    margin-bottom:20px;
 }
+/* .cards-1{
+    /* margin-top: -500px; */
+/* } */ 
 
 @media (max-width:765px){
     .h-content{
@@ -73,14 +79,21 @@
     .img2 img{
        margin-left:20px;
     }
-    .cards{
-        margin-left:200px
-    }
+   
    .layer{
     margin:20px
    }
-   .cards-1{
-    padding:20px;
-    margin:20px;
-   }
+   /* .dishes{ */
+     /* margin-left: 30px; */
+   /* } */
+}
+@media (max-width:400px){
+    .dishes{
+        margin-left:30px;
+    }
+}
+@media (max-width:320px){
+    .dishes{
+        margin-left:10px;
+    }
 }

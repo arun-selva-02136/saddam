@@ -1,14 +1,11 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import img7 from '../../assets/logo.png';
-import img8 from '../../assets/facebook.png';
-import img9 from '../../assets/instagram.png';
-import img10 from '../../assets/twiter.png';
-import img11 from '../../assets/youtube.png';
 
+import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { FiFacebook } from "react-icons/fi";
-import { FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+// import { FaInstagram } from "react-icons/fa";
+// import { FaXTwitter } from "react-icons/fa6";
 import { FiYoutube } from "react-icons/fi";
 
 import './Footer.css'
@@ -20,8 +17,9 @@ const Footer = () => {
       <Container >
         <Row>
           <Col xs={12} md={3} className="mb-4 mb-md-0">
-            <img src={img7} style={{width:'30px'}}/>
-            <p>Savor the artistry where every dish is a culinary masterpiece</p>
+            <img src={img7} style={{width:'35px',boxShadow:'2px 2px 40px #39DB4A',borderRadius:'20px'}}/>
+            <br/>
+            <p>Savor the artistry where <br/>every dish is a culinary <br/>masterpiece</p>
           </Col>
           <Col xs={12} md={3} className="mb-4 mb-md-0">
             <h5>Main Menu</h5>
@@ -49,38 +47,31 @@ const Footer = () => {
             </ul>
           </Col>
         </Row>
-       
       </Container>
-    </footer>
-      {/* <div className="footer-last"> */}
-        <Row>
-            <Col md={6}>
-          <div className="medias">
-            <div className="media-img">
-            <FiFacebook />
-            </div>
-            <div className="media-img">
-            <FaInstagram />
-            </div>
-            <div className="media-img">
-            <FaXTwitter />
-            </div>
-            <div className="media-img">
-            <FiYoutube />
-            </div>
-          </div>
-          </Col>
-        <Col md={6}>
-        <div className="footer-last2">
-            <p>Copyright 2025 Dscode | All rights reserved</p>
-        </div>
-        </Col>
-        </Row>
-      {/* </div> */}
-        
-
     
-        
+       
+    </footer>    
+    <Container className='footerLast'>
+        <Row className="align-items-center">
+          <Col md={6} className="d-flex justify-content-start">
+            <a href="#" className="me-3 text-success">
+              <FiFacebook size={24} className="medias" />
+            </a>
+            <a href="#" className="me-3 text-success">
+              <FaInstagram size={24} className="medias" />
+            </a>
+            <a href="#" className="me-3 text-success">
+              <FaTwitter size={24} className="medias" />
+            </a>
+            <a href="#" className="text-success">
+              <FiYoutube size={24} className="medias" />
+            </a>
+          </Col>
+          <Col md={6} className="text-md text-muted">
+            © 2023 Dscode | All rights reserved
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
