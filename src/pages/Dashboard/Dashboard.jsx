@@ -6,7 +6,7 @@ import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore"
 import MenuImg from "../../assets/dash-img.png";
 import "./Dashboard.css";
 
-function Dashboard() {
+const Dashboard = () => {
   const [showCategoryPopup, setShowCategoryPopup] = useState(false);
   const [showMenuPopup, setShowMenuPopup] = useState(false);
   const [categoryName, setCategoryName] = useState("");

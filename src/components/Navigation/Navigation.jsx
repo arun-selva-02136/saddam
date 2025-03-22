@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import img1 from '../../assets/logo.png';
 import { Link, Route, Routes } from 'react-router-dom';
 import Login from '../Login/Login';
-import Dashboard from '../../pages/Dashboard/Dashboard ';
+import Dashboard from '../../pages/Dashboard/Dashboard';
 import PrivateRoute from '../../pages/Dashboard/PrivateRoute';
 import './Navigation.css';
 
@@ -35,7 +35,7 @@ function Navigation() {
             </Nav.Link>
           </Nav>
           <Nav className='navigate ms-auto'>
-          <Button style={{background:'#39DB4A',borderRadius:"20px",color:'white',border:'none'}} className='btn'>Login <CiLogin /></Button>
+          <Button style={{background:'#39DB4A',borderRadius:"20px",color:'white',border:'none'}} className='btn' onClick={() => setShowLogin(true)}>Login <CiLogin /></Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
