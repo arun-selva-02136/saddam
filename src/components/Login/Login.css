@@ -1,0 +1,72 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .main-container{
+    padding:2%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .login-container {
+
+    /* background-image:url("../../assets//login-background.png"); */
+    background: url("../../assets/login-background.png");
+    background-image: 80%;
+    background-repeat:no-repeat ;
+    background-size:cover ;
+    width: 350px;
+    height: 350px;
+ 
+   
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 0.1%;
+    left: 1%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 5px;
+  }
+  
+  .overlay-input {
+    margin: 10px 0;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    width: 50%;
+  }
+  
+  .login-btn {
+    background: green;
+    color: white;
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin: 15px 25px 25px 50px;
+  }
+  
