@@ -36,7 +36,6 @@ const App = () => {
               </Routes>
             </>
           } />
-        {/* <Route path="/menu" element={<Footer />} /> */}
         <Route path ='/gallery' element={<Gallery/>}/>
         </Routes>
       <Footer />

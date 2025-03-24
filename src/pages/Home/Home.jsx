@@ -4,14 +4,14 @@ import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { FaPlay } from "react-icons/fa6";
 import './Home.css'
-import img2 from '../../assets/polygon 1.png'; 
+// import img2 from '../../assets/polygon 1.png'; 
 import img3 from '../../assets/chef-3.png';
 import img4 from '../../assets/chef-2.png';
 import img5 from '../../assets/Vector.png';
 import img6 from '../../assets/time.png';
 import img7 from '../../assets/shop.png';
 import img8 from '../../assets/gift.png';
-import img9 from '../../assets/commend.png';
+// import img9 from '../../assets/commend.png';
 // import {Link} from './react-router-dom'
 import box1 from '../../assets/burger.png';
 import box2 from '../../assets/pizha.png';

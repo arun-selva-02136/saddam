@@ -10,7 +10,7 @@ import img1 from '../../assets/logo.png';
 import { Link, Route, Routes } from 'react-router-dom';
 import Login from '../Login/Login';
 import Dashboard from '../../pages/Dashboard/Dashboard';
-import PrivateRoute from '../../pages/Dashboard/PrivateRoute';
+import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import './Navigation.css';
 
 function Navigation() {
