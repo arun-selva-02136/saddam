@@ -27,7 +27,7 @@ function Navigation() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="navigate ms-auto">
             <Nav.Link  as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} href="/menu">Menu</Nav.Link>
+            <Nav.Link as={Link} to="/menu">Menu</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
             <Nav.Link eventKey={2} as={Link} to="/contact">
@@ -41,9 +41,12 @@ function Navigation() {
       </Container>
     </Navbar>
     {showLogin && <Login onClose={() => setShowLogin(false)} />}
-    <Routes>
+      <div style={{marginTop:'50px'}}>
+      <Routes>
       <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
     </Routes>
+      </div>
+   
     </>
   );
 }

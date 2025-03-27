@@ -19,7 +19,7 @@ const Footer = () => {
           <Col xs={12} md={3} className="mb-4 mb-md-0">
             <img src={img7} style={{width:'35px',boxShadow:'2px 2px 40px #39DB4A',borderRadius:'20px'}}/>
             <br/>
-            <p>Savor the artistry where <br/>every dish is a culinary <br/>masterpiece</p>
+            <p className='mt-3'>Savor the artistry where <br/>every dish is a culinary <br/>masterpiece</p>
           </Col>
           <Col xs={12} md={3} className="mb-4 mb-md-0">
             <h5>Main Menu</h5>

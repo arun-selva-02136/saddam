@@ -1,1 +1,15 @@
 /node_modules
+.terraform
+.dockerignore
+.terraform.lock.hcl
+billing-credential.json
+Dockerfile
+main.tf
+nginx.conf
+outputs.tf
+providers.tf
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+variables.tf
+versions.tf

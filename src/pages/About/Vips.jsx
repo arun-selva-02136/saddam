@@ -8,7 +8,7 @@ const Vips = () => {
     return (
         <>
 
-            <Container className="mb-5" style={{marginTop:"5%"}}>
+            <Container className="mb-5" style={{marginTop:"100px"}}>
                 <Card className="p-4 vip-container">
 
                     <Row style={{ padding: 'inherit' }}>

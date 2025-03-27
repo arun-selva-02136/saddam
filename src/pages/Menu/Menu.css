@@ -1,0 +1,12 @@
+.menuCard {
+    transition: all 0.3s ease;
+}
+
+.ant-card {
+    transition: all 0.3s ease;
+}
+
+/* Animation for showing more items */
+.ant-row {
+    transition: all 0.3s ease;
+}

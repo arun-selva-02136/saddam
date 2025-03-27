@@ -12,6 +12,7 @@ import Awards from './pages/About/Awards';
 import Selection from './components/navSecection/Selection'
 import Footer from './components/Footer/Footer';
 import Gallery from './pages/Gallery/Gallery';
+import Menu from "./pages/Menu/Menu";
 
 // import './App.css'
 
@@ -23,6 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/about/*" element={
             <>
               <Selection />
