@@ -49,6 +49,9 @@ const Menus =[
   {title:"GIFT CARDS",order:img8,text:'Give the gift of exceptional dinning with Foodi Gift Cards'}
 ]
 const Home = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const videoUrl = "https://www.youtube.com/embed/nZAwAYJVA5w?si=8AQjDtDwGkN_uEXd" ;
   const [categoryData, setCategoryData] = useState([]);
   const [menuData, setMenuData] = useState([]);
 
