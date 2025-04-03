@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Container,Row,Col, Button,Card} from 'react-bootstrap'
+import { Modal } from "antd";
 import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { FaPlay } from "react-icons/fa6";
@@ -20,10 +21,19 @@ import box3 from '../../assets/juice.png';
 import box4 from '../../assets/Naan.png';
 import box5 from '../../assets/Murtabak.png';
 import box6 from '../../assets/jelur.png';
+// firbase
+// import {useEffect,useState} from 'react';
+// import {db} from '../Firebase/config'
+// import {collection,getDocs} from 'firebase/'
+// import { fetchCategory, addCategory, deleteCategory } from "../../sevices/CategoryServices/CategoryServices";
+// import { fetchMenu, addMenu, updateMenu, deleteMenu } from "../../sevices/MenuService/MenuService";
 
+const item=[
+  { title: "Naan", img: box1, text: "(86 dishes)" },
+  { title: "Minuman", img:box2, text: "(12 break fast)" },
+  { title: "Browse all", img: box3, text: "(255 items)" }
 
-
-
+]
 const dishes = [
   { title: "Naan Butter", img: box4, price: "$6.00", rating: 4.9 },
   { title: "Murtabak", img: box5, price: "$9.50", rating: 4.6 },
@@ -38,17 +48,46 @@ const Menus =[
 ]
 const Home = () => {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const videoUrl = "https://www.youtube.com/embed/nZAwAYJVA5w?si=8AQjDtDwGkN_uEXd" ;
+
+
   return ( 
     <div  className='mt-5'>
       
       <Container className='home1'>
-        <Row>
+        <Row style={{alignItems:'center'}}>
           <Col md={6}>
             <div className="head-left"><br/>
                 <h1>Dive into Delights Of Delectable <span>Food</span></h1><br/>
                 <p>Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</p><br/>
                 <div className='text-center'>
-                <p>Watch Video <FaPlay style={{color:"green",fontSize:'12px',width:'70px',height:'70px', background:'white',margin:'10px',padding:'20px',borderRadius:'50px',boxShadow:'2px 5px 45px #FDF100'}}/></p>
+                <p>Watch Video <FaPlay  onClick={() => setIsModalOpen(true)} style={{color:"green",fontSize:'12px',width:'70px',height:'70px', background:'white',margin:'10px',padding:'20px',borderRadius:'50px',boxShadow:'2px 5px 45px #FDF100',cursor: "pointer",}}/></p>
+                     <Modal
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false
+        )}
+        footer={null}
+        centered
+        width='70%'
+        className='custom-model'
+        destroyOnClose={true}
+        
+      >
+         {isModalOpen && (
+        <iframe
+          key={isModalOpen}
+          width="100%"
+          height="370px"
+          top="70%"
+          src={videoUrl} 
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title="YouTube Video"
+        ></iframe>
+         )}
+      </Modal>
                  </div>
             </div>
            
@@ -56,9 +95,6 @@ const Home = () => {
           <Col md={6}>
             <div className="head-right">
               <div className="image d-flex justify-content align-items-center sm row">
-                {/* <div>
-                  <img src={img9} style={{width:'200px',position:'absolute',marginBottom:'330px'}}/>
-                  </div> */}
                 <img src={img3} style={{width:"800px"}}/>
               </div>
             </div>
@@ -71,13 +107,9 @@ const Home = () => {
     <p style={{color:'#1B7C25',fontWeight:'600'}}>CUSTOMER FAVORITES</p>
     <h1 className="mb-4 text-center" style={{fontWeight:'600'}}>Popular Catogaries</h1>
     <Row className="w-100 text-center">
-      {[
-        { title: "Naan", img: box1, text: "(86 dishes)" },
-        { title: "Minuman", img:box2, text: "(12 break fast)" },
-        { title: "Browse all", img: box3, text: "(255 items)" }
-      ].map((item, index) => (
-        <Col key={index} xs={12} md={4} className="dishes mb-3">
-          <Card className=" p-3 lg" style={{margin:'10px',border:'none',boxShadow:'2px 5px 35px #FDF100',borderRadius: '20px',width:'100%',maxWidth: '260px'}}>
+      {item.map((item, index) => (
+        <Col key={index} xs={12} md={4} className="mb-3 ">
+          <Card className="p-4 lg" style={{margin:'10px',border:'none',boxShadow:'2px 5px 35px #FDF100',borderRadius: '20px',width:'95%'}}>
           <Card.Img variant="top" className="mx-auto" style={{width:'80px',height:'80px',background:'#5FE26C',padding:'10px',borderRadius:'60px'}}src={item.img} />
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
@@ -111,7 +143,7 @@ const Home = () => {
           <Col key={index} xs={12} md={4} className="d-flex justify-content-center">
             <Card className="layer p-3 -sm  border-0" style={{ width: "18rem", borderRadius: "20px",boxShadow:'2px 5px 35px #FDF100' }}>
                <div className="favourit">
-                <CiHeart className="heartbeat position-absolute text-white m-2" />
+                <CiHeart className="heartbeat position-absolute text-white m-2"/>
                 </div>
               <div className="position-relative text-center">
                 <Card.Img
@@ -143,7 +175,7 @@ const Home = () => {
           <Col md={6}>
             <div className="home2">
               <div className="img2 d-flex justify-content align-items-center md row">
-                <img src={img4} style={{width:'350px'}}/>
+                <img src={img4} style={{width:'380px',marginRight:'10px'}}/>
               </div>
             </div>
           </Col>
@@ -169,7 +201,7 @@ const Home = () => {
           <h1>Our Culinary Journey And Services</h1>
           <h5>Rooted in passion, we curate unforgettable dining experiences and offer exceptional services, blending culinary artistry with warm hospitality.</h5>
           <br/>
-          <Button className='btn' style={{background:'#39DB4A',border:'none',borderRadius:'20px'}}>Explore</Button><br/>
+          <Button className='btn' style={{background:'#39DB4A',border:'none',borderRadius:'20px'}}>Explore</Button><br/><br/>
           </div> 
          </Col> 
       
@@ -184,7 +216,7 @@ const Home = () => {
                   // padding:'10px',
                   width: '90%',
                   // maxWidth: '180px',
-                  // height: '180px',
+                  // height: '150px',
                   // marginLeft:'60px',
                 
                   
@@ -196,7 +228,7 @@ const Home = () => {
               > 
                 <Card.Img src={menu.order} style={{width:'40px'}}></Card.Img>
                 <Card.Title style={{color:'#39DB4A',fontSize:'15px'}}>{menu.title}</Card.Title>
-                <Card.Text style={{color:"#5FE26C",textAlign:"center",fontSize:'12px'}}>{menu.text}</Card.Text>
+                <Card.Text style={{color:'#90BD95',textAlign:"center",fontSize:'12px'}}>{menu.text}</Card.Text>
               </Card>
             </Col>
           ))}

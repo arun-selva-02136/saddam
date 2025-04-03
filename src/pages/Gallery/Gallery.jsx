@@ -20,7 +20,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <Container className="gallery-container mt-5 p-4 mb-5 border-warning rounded">
+    <Container className="gallery-container  p-4 mb-5 border-warning rounded" style={{width:'90%',marginTop:'90px'}}>
       <h2 className="mb-4"style={{color:'#39DB4A'}}>Gallery</h2>
       <Row className="g-3">
         {/* First Row with 2 columns (2 images) */}

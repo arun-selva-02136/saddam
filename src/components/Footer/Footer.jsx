@@ -1,13 +1,9 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import img7 from '../../assets/logo.png';
-
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { FiFacebook } from "react-icons/fi";
-// import { FaInstagram } from "react-icons/fa";
-// import { FaXTwitter } from "react-icons/fa6";
 import { FiYoutube } from "react-icons/fi";
-
 import './Footer.css'
 
 const Footer = () => {
@@ -17,7 +13,7 @@ const Footer = () => {
       <Container >
         <Row>
           <Col xs={12} md={3} className="mb-4 mb-md-0">
-            <img src={img7} style={{width:'35px',boxShadow:'2px 2px 40px #39DB4A',borderRadius:'20px'}}/>
+            <img src={img7} style={{width:'45px',boxShadow:'0px 2px 20px #39DB4A',borderRadius:'20px'}}/>
             <br/>
             <p className='mt-3'>Savor the artistry where <br/>every dish is a culinary <br/>masterpiece</p>
           </Col>
@@ -30,14 +26,6 @@ const Footer = () => {
               <li><a href="/contact" >Contact</a></li>
             </ul>
           </Col>
-          <Col xs={12} md={3} className="mb-4 mb-md-0">
-            <h5>Contact Us</h5>
-            <ul className="list-unstyled">
-              <li><a href="mailto:info@company.com">example@email.com</a></li>
-              <li><a href="tel:+64 958 248 966" >+64 958 248 966</a></li>
-              <li><a href="./">Social media</a></li>
-            </ul>
-          </Col>
           <Col xs={12} md={3}>
             <h5>Follow Us</h5>
             <ul className="list-unstyled">
@@ -46,6 +34,15 @@ const Footer = () => {
               <li><a href="#" >FAQ</a></li>
             </ul>
           </Col>
+          <Col xs={12} md={3} className="mb-4 mb-md-0">
+            <h5>Contact Us</h5>
+            <ul className="list-unstyled">
+              <li><a href="mailto:info@company.com">example@email.com</a></li>
+              <li><a href="tel:+64 958 248 966" >+64 958 248 966</a></li>
+              <li><a href="./">Social media</a></li>
+            </ul>
+          </Col>
+        
         </Row>
       </Container>
     
@@ -68,7 +65,7 @@ const Footer = () => {
             </a>
           </Col>
           <Col md={6} className="text-md text-muted">
-            © 2023 Dscode | All rights reserved
+           copyrights © 2025 Dscode | All rights reserved
           </Col>
         </Row>
       </Container>

@@ -6,8 +6,12 @@
 .navbar{
     /* width:1236px; */
     height:60px;
-    /* position:sticky;
-    top: 0; */
+    position: sticky;
+     /* top: 0;
+      width: 100%;
+      z-index: 1000; */
+    /* position:fixed; */
+    /* top:0;  */
     background-color:white;
     /* width:95%; */
   }
@@ -22,26 +26,31 @@
     background-color: aquamarine;
   }
   Button.navbar-toggler{
-    color:green;
+    color:#39DB4A;
+    border:none;
   }
  
-  @media (max-width:768px){
-     .btn{
+  @media (max-width: 765px) {
+    .btn{
       align-items: center;
       /* width:70px; */
       margin: auto;
-      
     }
-    .navbar{
-      height:60px;
-      background-color: white;
+    .navbar .navbar-collapse {
+      background-color: white; /* Ensure background is visible */
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
-    /* .list_item{
-      background-color:aqua;
-    } */
-    .navigate{
-      /* background-color: aqua; */
+  
+    .navbar .nav-link {
       text-align: center;
-      background-color:white;
+      width: 100%;
+      display: block;
+      padding: 10px;
     }
   }
+  

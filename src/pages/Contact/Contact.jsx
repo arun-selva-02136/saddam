@@ -10,7 +10,7 @@ const Contact = () => {
     console.log('Received values of form: ', values);
   };
   return (
-    <Container className="py-5 mt-5">
+    <Container className="py-5 mt-5" style={{width:'90%'}}>
       <Row className="contact-card align-items-center">
         <Col md={5}>
           <Title type="success">Contact Us</Title>

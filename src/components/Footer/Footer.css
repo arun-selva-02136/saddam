@@ -22,11 +22,6 @@
     background-color: #39DB4A;
     color:#EFEFFF;
 }
-@media (max-width:660px){
-    .footer-1{
-        margin-right: -30px;
-    }
-}
 .footer-1 li, a{
     color:#39DB4A;
     text-decoration: none;
