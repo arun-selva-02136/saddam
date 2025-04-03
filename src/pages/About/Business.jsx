@@ -5,6 +5,9 @@ import analyises from '../../assets/business-img1.jpg';
 import statics from '../../assets/business-img2.jpg';
 import './Business.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import business1 from '../../assets/business1.png'
+import business2 from '../../assets/business2.png'
+import business3 from '../../assets/business3.png'
 
 const Business = () => {
     return (
@@ -52,22 +55,25 @@ const Business = () => {
                             </ul>
 
                         </ul>
-                        <Row>
-                            <Col md={8}>
+                        <Row style={{display:"flex" ,gap:"20px"}}>
+                            <Col md={10} >
                                 <Card className='badge-box'>
-                                    <h6>Order Food</h6>
+                                    <Row className='d-flex  justify-content-between'>
+                                        <h6> Order Food </h6>
+                                        <img src={business1} style={{width:"30px"}}/>
+                                    </Row>
                                     <p>Presentation are tools that can be used as lectures.</p>
                                 </Card>
                             </Col>
-                            <Col md={8}>
+                            <Col md={10}>
                                 <Card className='badge-box'>
-                                    <h6>Delivery Food</h6>
+                                    <h6>Delivery Food <img src={business2}style={{width:"30px"}} alt="" /></h6>
                                     <p>Presentation are tools that can be used as lectures.</p>
                                 </Card>
                             </Col>
-                            <Col md={8}>
+                            <Col md={10}>
                                 <Card className='badge-box'>
-                                    <h6>Enjoy Food</h6>
+                                    <h6>Enjoy Food <img src={business3}style={{width:"30px"}} alt="" /></h6>
                                     <p>Presentation are tools that can be used as lectures.</p>
                                 </Card>
                             </Col>

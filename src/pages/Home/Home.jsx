@@ -1,7 +1,9 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import {Container,Row,Col, Button,Card} from 'react-bootstrap'
 import { Modal } from "antd";
 import { FaHeart, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { fetchCategory } from "../../sevices/CategoryServices/CategoryServices";
+import { fetchMenu } from "../../sevices/MenuService/MenuService";
 import { CiHeart } from "react-icons/ci";
 import { FaPlay } from "react-icons/fa6";
 import './Home.css'
@@ -47,9 +49,57 @@ const Menus =[
   {title:"GIFT CARDS",order:img8,text:'Give the gift of exceptional dinning with Foodi Gift Cards'}
 ]
 const Home = () => {
+  const [categoryData, setCategoryData] = useState([]);
+  const [menuData, setMenuData] = useState([]);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-    const videoUrl = "https://www.youtube.com/embed/nZAwAYJVA5w?si=8AQjDtDwGkN_uEXd" ;
+  // const [showAll, setShowAll] = useState(false);
+
+  // // Determine how many categories to display
+  // const displayedCategories = showAll ? categoryData : categoryData.slice(0, 3);
+
+  useEffect(() => {
+    loadCategory();
+    loadMenu();
+  }, []);
+
+  const loadCategory = async () => {
+    try {
+      const categories = await fetchCategory();
+     
+      setCategoryData(categories);
+    } catch (error) {
+      console.error("Error fetching Category: ", error.message);
+    }
+  };
+
+  const loadMenu = async () => {
+    try {
+      const menu = await fetchMenu();
+      setMenuData(menu);
+    } catch (error) {
+      console.error("Error fetching Menu: ", error.message);
+    }
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 3; 
+  const totalCategories = categoryData.length;
+  
+  // Determine which categories to show
+  const displayedCategories = categoryData.slice(currentIndex, currentIndex + itemsPerPage);
+  
+  // Handle previous and next clicks
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  };
+  
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => 
+      Math.min(prevIndex + 1, totalCategories - itemsPerPage)
+    );
+  };
+  
+  
 
 
   return ( 
@@ -103,23 +153,71 @@ const Home = () => {
       </Container>
      {/* card-2 */}
 
-     <Container className="d-flex flex-column align-items-center justify-content" style={{marginTop:'80px',marginBottom:'80px'}}>
-    <p style={{color:'#1B7C25',fontWeight:'600'}}>CUSTOMER FAVORITES</p>
-    <h1 className="mb-4 text-center" style={{fontWeight:'600'}}>Popular Catogaries</h1>
-    <Row className="w-100 text-center">
-      {item.map((item, index) => (
-        <Col key={index} xs={12} md={4} className="mb-3 ">
-          <Card className="p-4 lg" style={{margin:'10px',border:'none',boxShadow:'2px 5px 35px #FDF100',borderRadius: '20px',width:'95%'}}>
-          <Card.Img variant="top" className="mx-auto" style={{width:'80px',height:'80px',background:'#5FE26C',padding:'10px',borderRadius:'60px'}}src={item.img} />
-            <Card.Body>
-              <Card.Title>{item.title}</Card.Title>
-              <Card.Text>{item.text}</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
+     <Container className="d-flex flex-column align-items-center justify-content" style={{ marginTop: "80px", marginBottom: "80px" }}>
+    <p style={{ color: "#1B7C25", fontWeight: "600" }}>CUSTOMER FAVORITES</p>
+    <h1 className="mb-4 text-center" style={{ fontWeight: "600" }}>
+      Popular Categories
+    </h1>
+
+  
+    {/* Arrows Below the Categories */}  
+<div className="w-100  mt-1 mb-3" style={{display:"flex",flexWrap:"nowrap !important",justifyContent:"end"
+}}>
+  <Button 
+    onClick={handlePrev} 
+    disabled={currentIndex === 0} 
+    variant="light" 
+    className="rounded-circle mx-2"
+    style={{ backgroundColor: "#f2f2f2", color: "black", border: "none" }}  
+  >
+    <FaChevronLeft />
+  </Button>
+
+  <Button 
+    onClick={handleNext} 
+    disabled={currentIndex + itemsPerPage >= totalCategories} 
+    className="rounded-circle mx-2"
+    style={{ backgroundColor: "#39DB4A", color: "white", border: "none" }}  
+  >
+    <FaChevronRight />
+  </Button>
+</div>
+
+
+    {/* Categories */}
+    <Row className="w-100 justify-content-center text-center">
+      {displayedCategories.map((category, index) => {
+        const categoryMenuCount = menuData.filter(
+          (menu) => menu.categoryName === category.categoryName
+        ).length;
+
+        return (
+          <Col key={index} xs={12} md={4} className="d-flex justify-content-center">
+            <Card className="p-3" style={{
+              margin: "10px",
+              border: "none",
+              boxShadow: "2px 5px 35px #FDF100",
+              borderRadius: "20px",
+              width: "100%",
+              maxWidth: "260px", 
+            }}>
+              <Card.Img variant="top" className="mx-auto" style={{
+                width: "80px",
+                height: "80px",
+                background: "#5FE26C",
+                padding: "10px",
+                borderRadius: "60px",
+              }} src={category.image} />
+              <Card.Body>
+                <Card.Title>{category.categoryName}</Card.Title>
+                <Card.Text>({categoryMenuCount} items)</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        );
+      })}
     </Row>
-  </Container> 
+  </Container>
 
    <Container className="py-5">
        <div className="d-flex justify-content-between align-items-right my-3">

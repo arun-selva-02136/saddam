@@ -73,14 +73,15 @@ const Menu = () => {
                         }}
                     >
                         <Card>
-                            <div style={{display:'flex', justifyContent:'space-between', alignItems: 'center'}}>
+                            <div style={{display:'flex', justifyContent:'space-between', alignItems: 'center' , borderBottom:"solid 1px black"}}>
                                 <Title 
                                     level={2} 
                                     style={{ 
                                         marginBottom: '24px', 
                                         color: '#39DB4A',
                                         textAlign: categoryIndex % 2 === 0 ? 'left' : 'right',
-                                        padding: '0 20px'
+                                        padding: '0 20px',
+                                        
                                     }}
                                 >
                                     {category.name.toUpperCase()}
@@ -95,7 +96,10 @@ const Menu = () => {
                                             borderColor: '#39DB4A',
                                             height: '40px',
                                             padding: '0 20px',
-                                            borderRadius: '20px'
+                                            marginTop:"-20px",
+                                            borderRadius: '20px',
+                                           
+
                                         }}
                                     >
                                         {isExpanded ? 'Show Less' : 'Show More'}
@@ -104,7 +108,7 @@ const Menu = () => {
                             </div>
                             
                             {/* First Row - 4 items */}
-                            <Row gutter={[16, 16]} style={{ marginBottom: '16px' }}>
+                            <Row gutter={[16, 16]} style={{ marginBottom: '36px',marginTop:"40px" }}>
                                 {visibleItems.slice(0, 4).map((item) => (
                                     <Col xs={24} sm={12} md={6} key={item.menuId}>
                                         <MenuCard item={item} loading={loading} />
