@@ -20,8 +20,9 @@ const Login = ({ onClose }) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       if (userCredential.user) {
-        onClose(); 
+        console.log("Navigating to Dashboard..."); // Debugging
         navigate('/dashboard');
+        onClose(); 
       }
     } catch (err) {
      

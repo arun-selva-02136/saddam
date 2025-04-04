@@ -13,3 +13,4 @@ terraform.tfstate.backup
 terraform.tfvars
 variables.tf
 versions.tf
+saddam-service-credential.json
