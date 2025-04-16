@@ -60,6 +60,20 @@ const Home = () => {
   // // Determine how many categories to display
   // const displayedCategories = showAll ? categoryData : categoryData.slice(0, 3);
 
+
+    // Disable body scroll when modal is open
+    useEffect(() => {
+      if (isModalOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+      // Cleanup on unmount
+      return () => {
+        document.body.style.overflow = 'auto';
+      };
+    }, [isModalOpen]);
+  
   useEffect(() => {
     loadCategory();
     loadMenu();
@@ -124,6 +138,7 @@ const Home = () => {
         centered
         width='70%'
         className='custom-model'
+        maskClosable={false}
         destroyOnClose={true}
         
       >
@@ -131,7 +146,7 @@ const Home = () => {
         <iframe
           key={isModalOpen}
           width="100%"
-          height="370px"
+          height="320px"
           top="70%"
           src={videoUrl} 
           frameBorder="0"

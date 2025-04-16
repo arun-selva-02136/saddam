@@ -11,7 +11,7 @@ import business3 from '../../assets/business3.png'
 
 const Business = () => {
     return (
-        <Container className="mb-5" style={{marginTop:"100px"}}>
+        <Container className="mb-5" style={{marginTop:"70px"}}>
             <Card className="p-4 businees-container">
 
                 <Row style={{ padding: 'inherit' }}>
@@ -56,7 +56,7 @@ const Business = () => {
 
                         </ul>
                         <Row style={{display:"flex" ,gap:"20px"}}>
-                            <Col md={10} >
+                            <Col md={6} >
                                 <Card className='badge-box'>
                                     <Row className='d-flex  justify-content-between'>
                                         <h6> Order Food </h6>
@@ -65,13 +65,13 @@ const Business = () => {
                                     <p>Presentation are tools that can be used as lectures.</p>
                                 </Card>
                             </Col>
-                            <Col md={10}>
+                            <Col md={6}>
                                 <Card className='badge-box'>
                                     <h6>Delivery Food <img src={business2}style={{width:"30px"}} alt="" /></h6>
                                     <p>Presentation are tools that can be used as lectures.</p>
                                 </Card>
                             </Col>
-                            <Col md={10}>
+                            <Col md={6}>
                                 <Card className='badge-box'>
                                     <h6>Enjoy Food <img src={business3}style={{width:"30px"}} alt="" /></h6>
                                     <p>Presentation are tools that can be used as lectures.</p>

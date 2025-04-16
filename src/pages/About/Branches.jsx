@@ -37,7 +37,7 @@ const branches = [
 
 const Branches = () => {
   return (
-    <Container className="mb-4" style={{ backgroundColor: "#ffff", padding: '20px', marginTop:"100px"}}>
+    <Container className="mb-4" style={{ backgroundColor: "#ffff", padding: '0px 20px', marginTop:"70px"}}>
       <Row gutter={[14, 14]} justify="center">
         {branches.map((branch, index) => (
           <Col key={index} xs={24} sm={12} md={8} lg={6}>

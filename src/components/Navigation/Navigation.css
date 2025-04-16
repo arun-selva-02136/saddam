@@ -3,6 +3,15 @@
   font-family:"poppins";
   font-weight: 0;
 }
+.collapsing,
+.navbar-collapse {
+  transition: height 0.3s ease !important;
+}
+
+.navbar {
+  will-change: transform;
+}
+
 .navbar{
     /* width:1236px; */
     height:60px;

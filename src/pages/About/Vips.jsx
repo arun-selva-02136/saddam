@@ -1,14 +1,16 @@
 import React from 'react'
 import { Container, Card, Image } from "react-bootstrap";
 import { Row, Col } from 'antd';
-import vip from '../../assets/Mask group.jpg'
+import vip from '../../assets/Mask group.jpg';
+import vip2 from '../../assets/sadam10.jpeg';
+import vip3 from '../../assets/sadam11.jpeg';
 import './Vips.css'
 
 const Vips = () => {
     return (
         <>
 
-            <Container className="mb-5" style={{marginTop:"100px"}}>
+            <Container className="mb-5" style={{marginTop:"70px"}}>
                 <Card className="p-4 vip-container">
 
                     <Row style={{ padding: 'inherit' }}>
@@ -23,7 +25,7 @@ const Vips = () => {
                             </p>
                         </Col>
                         <Col md={8}>
-                            <Image src={vip} className="rounded" alt="Nasi Kandar History" fluid />
+                            <Image src={vip2} className="rounded" alt="Nasi Kandar History" fluid />
                         </Col>
                     </Row>
 
@@ -34,7 +36,7 @@ const Vips = () => {
                     </Row>
                     <Row justify="center" align="middle" style={{ borderBottom: '1px solid black', textAlign: "justify", padding: 'inherit' }}>
                         <Col md={8}>
-                            <Image src={vip} className="rounded" alt="Nasi Kandar History" fluid />
+                            <Image src={vip3} className="rounded" alt="Nasi Kandar History" fluid />
                         </Col>
                         <Col md={14} style={{ padding: '10px' }}>
                             <p className="text-muted mb-1" style={{ wordSpacing: '10px', fontSize: '20px' }}>

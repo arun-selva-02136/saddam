@@ -6,7 +6,7 @@ import './Awards.css'
 const Awards = () => {
   return (
     <>
-      <Container className="mb-5" style={{marginTop:"100px"}}>
+      <Container className="mb-5" style={{marginTop:"70px"}}>
         <Card className="p-4 award-container">
 
           <Row style={{ padding: 'inherit' }}>

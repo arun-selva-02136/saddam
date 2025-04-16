@@ -53,7 +53,7 @@ const Menu = () => {
     };
 
     return (
-        <div style={{ padding: '24px' }}>
+        <div style={{ padding: '24px',marginTop:"70px" }}>
             {categories.map((category, categoryIndex) => {
                 const isExpanded = expandedCategories[categoryIndex];
                 const visibleItems = isExpanded ? category.items : category.items.slice(0, 8);
@@ -73,7 +73,7 @@ const Menu = () => {
                         }}
                     >
                         <Card>
-                            <div style={{display:'flex', justifyContent:'space-between', alignItems: 'center' , borderBottom:"solid 1px black"}}>
+                            <div style={{display:'flex', justifyContent:'space-between',flexWrap:'wrap', alignItems: 'center' , borderBottom:"solid 1px black"}}>
                                 <Title 
                                     level={2} 
                                     style={{ 
@@ -81,7 +81,7 @@ const Menu = () => {
                                         color: '#39DB4A',
                                         textAlign: categoryIndex % 2 === 0 ? 'left' : 'right',
                                         padding: '0 20px',
-                                        
+                                        wordBreak:'unset'
                                     }}
                                 >
                                     {category.name.toUpperCase()}

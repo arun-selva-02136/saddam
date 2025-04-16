@@ -19,7 +19,7 @@ const Selection = () => {
   ];
  
   return (
-<Navbar expand="lg" >
+<Navbar expand="lg" style={{marginTop:"60px"}} >
 <Container className="nav-container">
 {/* <Navbar.Toggle aria-controls="navbarNav" /> */}
 {/* <Navbar.Collapse id="navbarNav"> */}

@@ -6,94 +6,71 @@ import img2 from "../../assets/sadam1.png";
 import img3 from "../../assets/sadam2.png";
 import img4 from "../../assets/sadam4.png";
 import img5 from "../../assets/sadam5.png";
+import img6 from "../../assets/sadam6.jpeg";
+import img7 from "../../assets/Mask group.jpg";
+import img8 from "../../assets/sadam8.jpeg";
+import img9 from "../../assets/sadam9.jpeg";
+import img10 from "../../assets/sadam10.jpeg";
+import img11 from "../../assets/sadam11.jpeg";
+import img12 from "../../assets/sadam12.jpeg";
 import "./Gallery.css";
 
 const images = [
-  { id: 1, url: img1, title: "Nasi Kandar 1",content:'lorem dummy content' },
-  { id: 2, url: img2, title: "Nasi Kandar 2",content:'lorem dummy content' },
-  { id: 3, url: img3, title: "Nasi Kandar 3",content:'lorem dummy content' },
-  { id: 4, url: img4, title: "Nasi Kandar 4",content:'lorem dummy content' },
-  { id: 5, url: img5, title: "Nasi Kandar 5",content:'lorem dummy content' }
+  { id: 1, url: img1, title: "Nasi Kandar 1", content: 'lorem dummy content' },
+  { id: 2, url: img2, title: "Nasi Kandar 2", content: 'lorem dummy content' },
+  { id: 3, url: img3, title: "Nasi Kandar 3", content: 'lorem dummy content' },
+  { id: 4, url: img4, title: "Nasi Kandar 4", content: 'lorem dummy content' },
+  { id: 5, url: img5, title: "Nasi Kandar 5", content: 'lorem dummy content' },
+  { id: 6, url: img6, title: "CATERING SERVICE", content: '1000 PEOPLE FOR JKG PROJECT MANAGEMENT' },
+  { id: 7, url: img7, title: "PUBLISH", content: 'ON MALAYSIA THE STAR NEWS PAPER' },
+  { id: 8, url: img8, title: "ALIF SATAR", content: 'MALAYSIAN ACTOR' },
+  { id: 9, url: img9, title: "AMY SEARCH", content: "90's ROCKSTAR" },
+  { id: 10, url: img10, title: "ISMAIL SABRI", content: 'FORMER OF PRIME MINISTER OF MALAYSIA' },
+  { id: 11, url: img11, title: "KHAIRY JAMALUDIN", content: 'FORMER MINISTER OF HEALTH PF MALAYSIA' },
+  { id: 12, url: img12, title: "Nasi Kandar 12", content: 'lorem dummy content' },
 ];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <Container className="gallery-container  p-4 mb-5 border-warning rounded" style={{width:'90%',marginTop:'90px'}}>
-      <h2 className="mb-4"style={{color:'#39DB4A'}}>Gallery</h2>
-      <Row className="g-3">
-        {/* First Row with 2 columns (2 images) */}
-        <Col xs={6} className="d-flex justify-content-center">
-          <Image
-            src={images[0].url}
-            fluid
-            rounded
-            className="shadow-lg img-fluid"
-            onClick={() => setSelectedImage(images[0])}
-            style={{ cursor: "pointer" }}
-            alt={images[0].title}
-          />
-        </Col>
-        <Col xs={6} className="d-flex justify-content-center">
-          <Image
-            src={images[1].url}
-            fluid
-            rounded
-            className="shadow-lg img-fluid"
-            onClick={() => setSelectedImage(images[1])}
-            style={{ cursor: "pointer" }}
-            alt={images[1].title}
-          />
-        </Col>
-      </Row>
-      <Row className="g-3 mt-2">
-        {/* Second Row - First Column (1 image) */}
-        <Col xs={6} className="d-flex justify-content-center">
-          <Image
-            src={images[2].url}
-            fluid
-            rounded
-            className="shadow-lg img-fluid"
-            onClick={() => setSelectedImage(images[2])}
-            style={{ cursor: "pointer" }}
-            alt={images[2].title}
-          />
-        </Col>
-        {/* Second Row - Second Column (2 stacked images) */}
-        <Col xs={6}>
-          <Row className="g-3">
-            <Col xs={12} className="d-flex justify-content-center">
+    <Container className="gallery-container p-4 mb-5 border-warning rounded" style={{ width: '90%', marginTop: '90px' }}>
+      <h2 className="mb-4" style={{ color: '#39DB4A' }}>Gallery</h2>
+      
+      {/* Dynamic grid layout with 4 images per row */}
+      <Row className="g-4">
+        {images.map((image) => (
+          <Col key={image.id} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">
+            <div className="gallery-item-wrapper">
               <Image
-                src={images[3].url}
+                src={image.url}
                 fluid
                 rounded
-                className="shadow-lg img-fluid"
-                onClick={() => setSelectedImage(images[3])}
+                className="shadow-lg img-fluid gallery-image"
+                onClick={() => setSelectedImage(image)}
                 style={{ cursor: "pointer" }}
-                alt={images[3].title}
+                alt={image.title}
               />
-            </Col>
-            <Col xs={12} className="d-flex justify-content-center">
-              <Image
-                src={images[4].url}
-                fluid
-                rounded
-                className="shadow-lg img-fluid"
-                onClick={() => setSelectedImage(images[4])}
-                style={{ cursor: "pointer" }}
-                alt={images[4].title}
-              />
-            </Col>
-          </Row>
-        </Col>
+              {/* <div className="image-overlay">
+                <h5 className="image-title">{image.title}</h5>
+              </div> */}
+            </div>
+          </Col>
+        ))}
       </Row>
+
       {/* Modal for Image Preview */}
-      <Modal show={!!selectedImage} onHide={() => setSelectedImage(null)} centered>
+      <Modal show={!!selectedImage} onHide={() => setSelectedImage(null)} centered size="lg">
         <Modal.Body className="text-center">
           {selectedImage && (
             <>
-              <Image src={selectedImage.url} fluid className="modal-image" alt={selectedImage.title} />
+              <Image 
+                src={selectedImage.url} 
+                fluid 
+                className="modal-image" 
+                alt={selectedImage.title} 
+                style={{ maxHeight: '70vh', objectFit: 'contain' }}
+              />
               <h4 className="mt-3">{selectedImage.title}</h4>
               <p>{selectedImage.content}</p>
             </>
