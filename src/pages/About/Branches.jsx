@@ -37,21 +37,57 @@ const branches = [
 
 const Branches = () => {
   return (
-    <Container className="mb-4" style={{ backgroundColor: "#ffff", padding: '0px 20px', marginTop:"70px"}}>
-      <Row gutter={[14, 14]} justify="center">
-        {branches.map((branch, index) => (
-          <Col key={index} xs={24} sm={12} md={8} lg={6}>
-            <Card
-            className='location-card'
-              hoverable
-              cover={<img src={map} alt="Location Map" className="location-img" />}
-            >
-              <Card.Meta title={branch.title} description={branch.address} />
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <Container className="mb-4" style={{ backgroundColor: "#ffff", padding: '0px 20px', marginTop: "70px" }}>
+    <Row gutter={[14, 14]} justify="center">
+      {branches.map((branch, index) => (
+        <Col key={index} xs={24} sm={12} md={8} lg={6} className="d-flex">
+          <Card
+            className="location-card w-100 d-flex flex-column justify-content-between"
+            hoverable
+            style={{ height: '100%', minHeight: '300px' }}
+            cover={<img src={map} alt="Location Map" className="location-img" />}
+          >
+            <Card.Meta
+              title={
+                <div style={{
+                  minHeight: '48px',
+                  whiteSpace: 'normal',
+                  wordBreak: 'break-word',
+                  textAlign: 'center',
+                  fontWeight: '600',
+                }}>
+                  {
+                    // Force bracket content to new line
+                    branch.title.includes('(')
+                      ? <>
+                          {branch.title.split('(')[0]}
+                          <br />
+                          ({branch.title.split('(')[1]}
+                        </>
+                      : branch.title
+                  }
+                </div>
+              }
+              description={
+                <div style={{
+                  minHeight: '60px',
+                  overflow: 'hidden',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  textAlign: 'center'
+                }}>
+                  {branch.address}
+                </div>
+              }
+            />
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  </Container>
+  
+
   );
 };
 

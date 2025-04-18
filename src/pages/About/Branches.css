@@ -1,7 +1,7 @@
 
 .location-card {
     border-radius: 15px;
-    box-shadow: 0px 15px 45px yellow;
+    box-shadow: 0px 10px 20px yellow;
     transition: transform 0.3s ease-in-out;
 }
 .location-card:hover {
