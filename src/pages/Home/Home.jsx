@@ -12,7 +12,7 @@ import owner1 from '../../assets/logo-2.png';
 import owner2 from '../../assets/saddam-branch.png';
 import owner3 from '../../assets/saddam-owner.png';
 import owner4 from '../../assets/saddam-owner2.png';
-import owner5 from '../../assets/saddam-owner3.png'
+// import owner5 from '../../assets/saddam-owner3.png'
 // import img2 from '../../assets/polygon 1.png'; 
 import img3 from '../../assets/chef-3.png';
 import img4 from '../../assets/chef-2.png';
@@ -96,7 +96,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   // home1
-  const carouselImages = [owner1,owner2,owner3,owner4,owner5];
+  const carouselImages = [owner1,owner2,owner3,owner4];
 const [carouselIndex, setCarouselIndex] = useState(0);
 
 useEffect(() => {
