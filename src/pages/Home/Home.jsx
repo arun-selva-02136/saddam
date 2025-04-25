@@ -283,37 +283,60 @@ useEffect(() => {
 
     {/* Categories */}
     <Row className="w-100 justify-content-center text-center">
-      {displayedCategories.map((category, index) => {
-        const categoryMenuCount = menuData.filter(
-          (menu) => menu.categoryName === category.categoryName
-        ).length;
+  {displayedCategories.map((category, index) => {
+    const categoryMenuCount = menuData.filter(
+      (menu) => menu.categoryName === category.categoryName
+    ).length;
 
-        return (
-          <Col key={index} xs={12} md={4} className="d-flex justify-content-center">
-            <Card className="p-3" style={{
-              margin: "10px",
-              border: "none",
-              boxShadow: "2px 5px 35px #FDF100",
-              borderRadius: "20px",
-              width: "100%",
-              maxWidth: "260px", 
-            }}>
-              <Card.Img variant="top" className="mx-auto" style={{
-                width: "80px",
-                height: "80px",
-                background: "#5FE26C",
-                padding: "10px",
-                borderRadius: "60px",
-              }} src={category.image} />
-              <Card.Body>
-                <Card.Title>{category.categoryName}</Card.Title>
-                <Card.Text>({categoryMenuCount} items)</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        );
-      })}
-    </Row>
+    return (
+      <Col
+        key={index}
+        xs={12}
+        sm={6}
+        md={4}
+        lg={3}
+        className="d-flex justify-content-center mb-4"
+      >
+        <Card
+          className="p-3"
+          style={{
+            border: "none",
+            boxShadow: "2px 5px 35px #FDF100",
+            borderRadius: "20px",
+            width: "100%",
+            maxWidth: "260px",
+          }}
+        >
+          <div
+            className="mx-auto d-flex align-items-center justify-content-center"
+            style={{
+              width: "80px",
+              height: "80px",
+              minWidth: "60px",
+              minHeight: "60px",
+              background: "#5FE26C",
+              padding: "10px",
+              borderRadius: "60px",
+              fontWeight: "bold",
+              fontSize: "28px",
+              color: "white",
+              textTransform: "uppercase",
+            }}
+          >
+            {category.categoryName?.charAt(0) || "?"}
+          </div>
+          <Card.Body>
+            <Card.Title style={{ wordBreak: "break-word" }}>
+              {category.categoryName}
+            </Card.Title>
+            <Card.Text>({categoryMenuCount} items)</Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+    );
+  })}
+</Row>
+
   </Container>
 
    <Container className="py-5">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Card, Image } from "react-bootstrap";
 import { Row, Col } from 'antd';
-import vip from '../../assets/Mask group.jpg';
+import vip from '../../assets/saddam13.jpeg';
 import vip2 from '../../assets/sadam10.jpeg';
 import vip3 from '../../assets/sadam11.jpeg';
 import './Vips.css'

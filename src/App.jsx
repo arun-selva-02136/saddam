@@ -15,7 +15,7 @@ import Selection from './components/navSecection/Selection'
 import Footer from './components/Footer/Footer';
 import Gallery from './pages/Gallery/Gallery';
 import Dashboard from './pages/Dashboard/Dashboard'
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute/PrivateRouter';
 import Menu from "./pages/Menu/Menu";
 
 // import './App.css'

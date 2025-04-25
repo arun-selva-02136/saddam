@@ -13,6 +13,7 @@ import img9 from "../../assets/sadam9.jpeg";
 import img10 from "../../assets/sadam10.jpeg";
 import img11 from "../../assets/sadam11.jpeg";
 import img12 from "../../assets/sadam12.jpeg";
+import img13 from "../../assets/saddam14.jpeg"
 import "./Gallery.css";
 
 const images = [
@@ -28,6 +29,7 @@ const images = [
   { id: 10, url: img10, title: "ISMAIL SABRI", content: 'FORMER OF PRIME MINISTER OF MALAYSIA' },
   { id: 11, url: img11, title: "KHAIRY JAMALUDIN", content: 'FORMER MINISTER OF HEALTH PF MALAYSIA' },
   { id: 12, url: img12, title: "Nasi Kandar 12", content: 'lorem dummy content' },
+  { id: 13, url: img13, title: "Nasi Kandar 13", content: 'lorem dummy content' },
 ];
 
 const Gallery = () => {
